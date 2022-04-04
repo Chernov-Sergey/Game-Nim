@@ -1,7 +1,10 @@
 from nim_engine import put_stones, get_bunches, is_gameover, take_from_bunch, enter_sizes
 from termcolor import cprint, colored
 
-enter_sizes()
+max_bunches = int(input(colored("Введите количество кучек предметов: ", color='green')))
+max_bunche_size = int(input(colored("Введите макстмальный размер кучки предметов: ", color='green')))
+
+enter_sizes(bunches=max_bunches, bunche_size=max_bunche_size)
 put_stones()
 user_number = 1
 while True:
@@ -21,4 +24,4 @@ while True:
     # if is_gameover():
     #     break
 
-cprint('Выйграл игрок номер {}'.format(user_number), color='red', attrs=['bold'])
+cprint('Выиграл игрок номер {}'.format(user_number), color='red', attrs=['bold'])
