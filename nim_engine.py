@@ -1,21 +1,16 @@
 from random import randint
-from termcolor import colored
-# from main import max_bunches, max_bunche_size
 
 MAX_BUNCHES = 0
 MAX_BUNCHE_SIZE = 0
-
 _holder = {}
 _sorted_keys = None
 
-def enter_sizes():
+def enter_sizes(bunches, bunche_size):
     global MAX_BUNCHES, MAX_BUNCHE_SIZE
-    MAX_BUNCHES = int(input(colored("Введите количество кучек предметов: ", color='green')))
-    MAX_BUNCHE_SIZE = int(input(colored("Введите макстмальный размер кучки предметов: ", color='green')))
-
+    MAX_BUNCHES = bunches
+    MAX_BUNCHE_SIZE = bunche_size
 
 def put_stones():
-    """ расположить камни на игровой поверхности """
     global _holder, _sorted_keys
     _holder = {}
     for i in range(1, MAX_BUNCHES + 1):
